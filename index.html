@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <title>sort_visual</title>
+
+        <script src="libraries/p5.js"></script>
+        <script src="libraries/p5.dom.js"></script>
+        <script src="timer_algos.js"></script>
+        <script src="libraries/p5.sound.js"></script>
+        <script src="algorithms.js"></script>
+        <script src="sketch.js"></script>
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" class="clickable">Algorithms</a>
+                    <ul>
+                        <li><a href="#" class="clickable" id="bubbleSort">Bubble Sort</a></li>
+                        <li><a href="#" class="clickable" id="selectionSort">Selection Sort</a></li>                        </li>
+                        <li><a href="#" class="clickable" id="mergeSort">Merge Sort</a></li>
+                        <li><a href="#" class="clickable" id="quickSort">Quick Sort</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Data size</a>
+                    <input
+                        class="range-input"
+                        type="range"
+                        min="30"
+                        max="60"
+                        value="42"
+                        class="slider"
+                        id="size"
+                    />
+                </li>
+                <li>
+                    <a href="#">Speed</a>
+                    <input
+                        class="range-input"
+                        type="range"
+                        min="0"
+                        max="40"
+                        value="40"
+                        class="slider"
+                        id="frm"
+                    />
+                </li>
+                <li><a href="#" id="time">time:0us</a></li>
+                <li><a href="#" class="clickable" id="reset">reset</a></li>
+            </ul>
+        </nav>
+    </body>
+</html>

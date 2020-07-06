@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: white;
+}
+body {
+    background: #f2f2f2;
+}
+nav {
+    background: #1b1b1b;
+    width: 100%;
+}
+nav:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+nav ul {
+    list-style: none;
+    position: relative;
+    align-items: center;
+}
+nav ul li {
+    display: inline-block;
+    margin: 0 5px;
+    color: #1b1b1b;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    line-height: 70px;
+    font-size: 16px;
+    padding: 8px 15px;
+    text-align: center;
+}
+/* nav ul li a:hover {
+    border-radius: 5px;
+    border-bottom: 1px solid #33ffff;
+} */
+.clickable:hover {
+    border-radius: 5px;
+    border-bottom: 1px solid #33ffff;
+    cursor: pointer;
+}
+nav ul ul {
+    position: absolute;
+    top: 70px;
+    opacity: 0;
+    visibility: hidden;
+}
+nav ul :hover > ul {
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul ul li {
+    background-color: #1b1b1b;
+    position: relative;
+    margin: 0px;
+    width: 200px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid;
+}
+
+.range-input {
+    background: teal;
+    -webkit-appearance: none;
+    height: 2px;
+    outline: none;
+    border-radius: 2px;
+}
+.range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #33ffff;
+    cursor: pointer;
+}
+.range-input::-moz-range-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #33ffff;
+    cursor: pointer;
+}
