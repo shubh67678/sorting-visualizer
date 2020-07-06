@@ -1,6 +1,6 @@
 # Sorting Visualizer
 
-![Project Image](project-image-url)
+![Project Image](https://raw.githubusercontent.com/shubh67678/sorting-visualizer/master/image/sort_project_pic.png)
 
 > [Live demo](https://peaceful-archimedes-611715.netlify.app/)
 
