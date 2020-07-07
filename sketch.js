@@ -10,7 +10,6 @@ var frame_rate_val = 40;
 var timer_arr = [];
 var time_taken = 0;
 var pause = false;
-
 //each bar has following properties
 class Element {
     constructor(val) {
@@ -30,11 +29,11 @@ class Element {
         }
         stroke(0);
         this.swap = false;
-        this.compare = false;//reset the vals as i only want one time display 
-        this.pivot = false;//waste delete it later(arr.pivot prop)
+        this.compare = false; //reset the vals as i only want one time display
+        this.pivot = false; //waste delete it later(arr.pivot prop)
         rect(i * thick, height - this.val + 1, thick, this.val);
         if (thick > 5) {
-            noStroke();//mix with rect
+            noStroke(); //mix with rect
             ellipse(
                 i * thick + thick / 2 + 0.5,
                 height - this.val + 1,
@@ -61,20 +60,20 @@ const timer_algo = {
 function setup() {
     console.log("in setup");
     createCanvas(width, height);
-    var btns = document.querySelectorAll(".clickable");//all buttons
+    var btns = document.querySelectorAll(".clickable"); //all buttons
     console.log(btns);
     for (btn of btns) {
         btn.addEventListener("click", function () {
             console.log("clicked", this.id);
             if (this.id == "reset") {
-                //gets a new arr 
+                //gets a new arr
                 //styles the element to default
                 arr = [];
                 sorted_arr = [];
                 start_sorting = false;
                 frameRate(frame_rate_val);
                 setup_arr();
-                document.getElementById("time").innerHTML = "time:0us";
+                document.getElementById("time").innerHTML = "time: 0us";
                 document.getElementById("frm").value = "40";
             } else {
                 if (this.id != "") {
@@ -82,9 +81,10 @@ function setup() {
                         //if no other sorting algo was selected
                         start_sorting = true;
                         start_sort(this.id);
+                        time_this_algo(this.id);
                         frameRate(frame_rate_val);
                     } else {
-                        //if other algo was running 
+                        //if other algo was running
                         //reset and run this new algo
                         arr = [];
                         sorted_arr = [];
@@ -93,6 +93,7 @@ function setup() {
                         setup_arr();
                         document.getElementById("time").innerHTML = "time:0us";
                         start_sorting = true;
+                        time_this_algo(this.id);
                         start_sort(this.id);
                     }
                 }
@@ -101,11 +102,34 @@ function setup() {
             return true;
         });
     }
-    cal_shit();//slide control
-    setup_arr();//create the arr
+    slider_control(); //slide control
+    setup_arr(); //create the arr
     console.log(frameRate());
 }
-function cal_shit() {
+function time_this_algo(algo) {
+    //timer start
+    var t0 = window.performance.now();
+    timer_loop = timer_algo[algo](timer_arr);
+    var t1 = window.performance.now();
+    console.log(t1 - t0);
+    time = (t1 - t0) * 1000;
+    time = Math.round(time);
+    t1 = 0;
+    t0 = 0;
+    if (time == 0) {
+        time = 0.01;
+    }
+    if (time < 1000) {
+        document.getElementById("time").innerHTML =
+            "time: " + String(time) + "us";
+    } else {
+        document.getElementById("time").innerHTML =
+            "time: " + String(Math.round(time / 1000)) + "ms";
+    }
+    //timer stop
+    //store the diff
+}
+function slider_control() {
     var size_slider = document.getElementById("size");
     size_slider.oninput = function () {
         thick = 62 - size_slider.value;
@@ -156,7 +180,7 @@ function cal_shit() {
 }
 function setup_arr() {
     for (let i = 0; i < len_arr; i++) {
-        push_value = random(thick, height - thick);//ellipse height
+        push_value = random(thick, height - thick); //ellipse height
         arr.push(new Element(push_value));
         sorted_arr.push(push_value);
         timer_arr.push(new Element(push_value));
@@ -164,16 +188,6 @@ function setup_arr() {
     sort_the_arr(sorted_arr);
 }
 function start_sort(algo) {
-    //timer start
-    var t0 = performance.now();
-    timer_loop = timer_algo[algo](timer_arr);
-    var t1 = performance.now();
-    console.log(t1 - t0);
-    time = (t1 - t0) * 1000;
-    time = Math.round(time);
-    document.getElementById("time").innerHTML = "time: " + String(time) + "us";
-    //timer stop
-    //store the diff
     loop_counter = algo_dict[algo](arr);
 }
 function draw() {
