@@ -36,6 +36,7 @@ nav ul li a {
     padding: 8px 15px;
     text-align: center;
 }
+
 /* nav ul li a:hover {
     border-radius: 5px;
     border-bottom: 1px solid #33ffff;
@@ -73,6 +74,7 @@ nav ul ul li {
     outline: none;
     border-radius: 2px;
 }
+
 .range-input::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 15px;

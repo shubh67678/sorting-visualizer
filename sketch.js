@@ -57,14 +57,15 @@ const timer_algo = {
     quickSort: quickSortLomuto_t,
 };
 
+
 function setup() {
-    console.log("in setup");
+    print_hello();
     createCanvas(width, height);
     var btns = document.querySelectorAll(".clickable"); //all buttons
-    console.log(btns);
+    // console.log(btns);
     for (btn of btns) {
         btn.addEventListener("click", function () {
-            console.log("clicked", this.id);
+            // console.log("clicked", this.id); debugging button
             if (this.id == "reset") {
                 //gets a new arr
                 //styles the element to default
@@ -104,7 +105,7 @@ function setup() {
     }
     slider_control(); //slide control
     setup_arr(); //create the arr
-    console.log(frameRate());
+    // console.log(frameRate());
 }
 function time_this_algo(algo) {
     //timer start
@@ -130,7 +131,7 @@ function time_this_algo(algo) {
     //store the diff
 }
 function slider_control() {
-    var size_slider = document.getElementById("size");
+    var size_slider = document.getElementById("data_size");
     size_slider.oninput = function () {
         thick = 62 - size_slider.value;
         //higher the slider more the bars
@@ -141,10 +142,10 @@ function slider_control() {
         start_sorting = false;
         frameRate(frame_rate_val);
         setup_arr();
-        console.log(arr);
+        // console.log(arr);
     };
     var frm_slider = document.getElementById("frm");
-    console.log(frm_slider);
+    // console.log(frm_slider);
     frm_slider.oninput = function () {
         //cant cange vals superfast
         //so we do according to range of slider
@@ -217,4 +218,8 @@ function sort_the_arr(arr) {
             }
         }
     }
+}
+
+function print_hello() {
+    console.log('Hellooo human!');
 }
