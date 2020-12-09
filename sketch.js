@@ -122,10 +122,10 @@ function time_this_algo(algo) {
     }
     if (time < 1000) {
         document.getElementById("time").innerHTML =
-            "time: " + String(time) + "us";
+            "Time: " + String(time) + "us";
     } else {
         document.getElementById("time").innerHTML =
-            "time: " + String(Math.round(time / 1000)) + "ms";
+            "Time: " + String(Math.round(time / 1000)) + "ms";
     }
     //timer stop
     //store the diff
