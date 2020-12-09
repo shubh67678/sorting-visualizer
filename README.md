@@ -2,7 +2,7 @@
 
 ![Project Image](https://raw.githubusercontent.com/shubh67678/sorting-visualizer/master/image/sort_project_pic.png)
 
-> [Live demo](https://peaceful-archimedes-611715.netlify.app/)
+> [Live demo](https://shubh67678.github.io/sorting-visualizer/)
 
 ---
 
