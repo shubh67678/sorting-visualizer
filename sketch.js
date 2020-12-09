@@ -74,7 +74,7 @@ function setup() {
                 start_sorting = false;
                 frameRate(frame_rate_val);
                 setup_arr();
-                document.getElementById("time").innerHTML = "time: 0us";
+                document.getElementById("time").innerHTML = "Time: 0us";
                 document.getElementById("frm").value = "40";
             } else {
                 if (this.id != "") {
@@ -92,7 +92,7 @@ function setup() {
                         start_sorting = false;
                         frameRate(frame_rate_val);
                         setup_arr();
-                        document.getElementById("time").innerHTML = "time:0us";
+                        document.getElementById("time").innerHTML = "Time:0us";
                         start_sorting = true;
                         time_this_algo(this.id);
                         start_sort(this.id);
