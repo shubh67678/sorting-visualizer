@@ -1,6 +1,8 @@
 # Sorting Visualizer
 
+<a href="http://google.com.au/">
 ![Project Image](https://github.com/shubh67678/sorting-visualizer/blob/master/image/gif.gif)
+</a>
 
 > [Live demo](https://shubh67678.github.io/sorting-visualizer/)
 
